@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap&subset=latin-ext" rel="stylesheet">
+        <script src="../scripts/vue.js"></script>
+        <style>
+          * {
+            font-family: 'Fira Code', monospace;
+            margin: 0;
+            padding: 0;
+          }
+          #calculator {
+            background-color: rgb(190, 190, 190);
+            width: 305px;
+            padding: 1.5;
+          }
+
+          #calculator input {
+            position: relative;
+            display:grid;
+            font-weight: 500;
+            text-align: right;
+            width: 304px;
+            border: 0;
+            background-color: rgb(190, 190, 190);
+          }
+
+          #calculator input#display {
+            color: #000000;
+            font-size: 60px;
+            height: 60px;
+          }
+
+          #calculator input#equation {
+            color: rgb(80, 80, 80);
+          }
+
+          #calculator div {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1;
+            padding: 1;
+            width: 72px;
+            height: 60px;
+          }
+
+          #calculator div#equals {
+            background-color: rgb(115, 163, 201);
+          }
+
+          #calculator div.lightgray {
+            background-color: rgb(242, 242, 242);
+            font-weight: 500;
+          }
+
+          #calculator div.gray {
+            background-color: rgb(215, 215, 215);
+          }
+        </style>
+    </head>
+    <body>
+        
+        <div id="calculator">
+          <input type="text" id="equation" v-model="equation" readonly>
+          <input type="text" id="display" v-model="area" @keyup="keymonitor">
+          <div class="gray" id="percentage" @click="percentage">%</div><div class="gray" id="clearEquation" @click="clearArea">CE</div><div class="gray" id="clearArea" @click="clearAll">C</div><div class="gray" id="backspace" @click="backspace"><--</div><br>
+          <div class="gray" id="fraction">¹/x</div><div class="gray" id="square">x²</div><div class="gray" id="squareRoot">²√x</div><div class="gray" id="division">÷</div><br>
+          <div class="lightgray" id="seven">7</div><div class="lightgray" id="eight">8</div><div class="lightgray" id="nine">9</div><div class="gray" id="times">×</div><br>
+          <div class="lightgray" id="four">4</div><div class="lightgray" id="five">5</div><div class="lightgray" id="six">6</div><div class="gray" id="minus">-</div><br>
+          <div class="lightgray" id="one">1</div><div class="lightgray" id="two">2</div><div class="lightgray" id="three">3</div><div class="gray" id="plus">+</div><br>
+          <div class="lightgray" id="signal">±</div><div class="lightgray" id="zero">0</div><div class="lightgray" id="decimal">.</div><div id="equals">=</div><br>
+        </div>
+        
+        <script src="../scripts/calculator.js"></script>
+    </body>
+</html>
